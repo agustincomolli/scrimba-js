@@ -1,7 +1,7 @@
-// 1. Create a function, save(), which logs out the count when it's called
+// Change this to use the plus equal technique you've learned
 
 function increment() {
-  count = count + 1;
+  count += 1;
   countElement = document.getElementById("count-el");
   countElement.innerText = count;
 }

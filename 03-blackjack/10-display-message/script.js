@@ -5,16 +5,20 @@ let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true;
 let message = "";
-// 1. Store the message-el paragraph in a variable called messageParagraph
+// Store the message-el paragraph in a variable called messageParagraph
 let messageParagraph = document.getElementById("message");
-// 2. Store the sum paragraph in a variable called sumParagraph
+// Store the sum paragraph in a variable called sumParagraph
 let sumParagraph = document.querySelector("#sum");
+// Store the cards paragraph in a variable called cards
+let cardsParagraph = document.querySelector("#cards");
 
 document.querySelector("button").addEventListener("click", startGame);
 
 function startGame() {
-  // 3. Render the sum on the page using this format -> "Sum: 14"
+  // Render the sum on the page using this format -> "Sum: 14"
   sumParagraph.textContent = "Suma: " + sum;
+  // Render the cars on the page using this format -> "Cards: 10 4"
+  cardsParagraph.textContent = "Cartas: " + firstCard + " " + secondCard;
   if (sum <= 20) {
     message = "¿Quieres tomar una carta nueva?";
   } else if (sum === 21) {

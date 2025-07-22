@@ -1,0 +1,29 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-image: url("../assets/images/table.png");
+  background-size: cover;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  color: goldenrod;
+}
+
+#message {
+  font-style: italic;
+}
+
+/* 3. Make sure that the two buttons have some space between
+each other when they are rendered out vertically */
+button {
+  color: #016f32;
+  width: 150px;
+  background-color: goldenrod;
+  padding: 8px;
+  margin: 2px 0;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+}

@@ -1,9 +1,9 @@
 // Create two variables:
 //  myLeads -> should be assigned to an empty array
 //  inputEl -> should be assigned to the text input field
+let myLeads = [];
 const saveButton = document.querySelector("#save");
 const newLead = document.querySelector("#new-lead");
-let myLeads = [];
 // Grab the unordered list and store it in a const variable called ulEl
 const leadList = document.querySelector("#lead-list");
 
@@ -12,17 +12,19 @@ const leadList = document.querySelector("#lead-list");
 // Google -> "get value from input field javascript"
 function save() {
   myLeads.push(newLead.value);
+  // Save the myLeads array to localStorage 
+  localStorage.setItem("leads", JSON.stringify(myLeads));
   // Clear out the input field
   newLead.value = "";
   renderLeads();
 }
 
-saveButton.addEventListener("click", save);
-
 function renderLeads() {
   // Create a variable, listItems, to hold all the HTML for the list items
   // Assign it to an empty string to begin with
   let listItems = "";
+
+  myLeads = JSON.parse(localStorage.getItem("leads")) || [];
 
   for (let i = 0; i < myLeads.length; i++) {
     // leadList.innerHTML += "<li>" + myLeads[i] + "</li>";
@@ -42,3 +44,7 @@ function renderLeads() {
   // Render the listItems inside the unordered list using ulEl.innerHTML
   leadList.innerHTML = listItems;
 };
+
+saveButton.addEventListener("click", save);
+
+renderLeads();

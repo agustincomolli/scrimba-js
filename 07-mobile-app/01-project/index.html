@@ -1,0 +1,32 @@
+<!--
+  Archivo principal de la extensión.
+  Permite guardar y mostrar leads (enlaces o textos) usando JavaScript y localStorage.
+  Incluye botones para guardar manualmente, guardar la pestaña activa y borrar todos los leads.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Metadatos y enlace a la hoja de estilos -->
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Extensión de Chrome</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <!-- Campo de entrada para agregar un nuevo lead manualmente -->
+  <input type="text" id="new-lead">
+  <!-- Botón para guardar el lead ingresado -->
+  <button id="save">GUARDAR ENTRADA</button>
+  <!-- Botón para guardar la URL de la pestaña activa -->
+  <button id="save-tab" title="Guardar pestaña">GUARDAR PESTAÑA</button>
+  <!-- Botón para borrar todos los leads (doble clic) -->
+  <button id="delete" title="Haz doble clic para borrar">BORRAR TODO</button>
+  <!-- Lista donde se mostrarán los leads guardados -->
+  <ul id="lead-list"></ul>
+
+  <!-- Script principal de la extensión -->
+  <script src="./script.js" type="module"></script>
+</body>
+
+</html>

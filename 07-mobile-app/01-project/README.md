@@ -2,13 +2,18 @@
 
 Este proyecto es una extensión de Chrome que permite guardar y gestionar leads (enlaces o textos) de manera sencilla. A continuación se explica la función de cada archivo y la estructura general del proyecto.
 
+
 ## Archivos principales
 
 - **index.html**: Archivo principal de la extensión. Contiene la estructura HTML, los botones para guardar y borrar leads, el campo de entrada y la lista donde se muestran los leads guardados. Incluye comentarios explicativos en el código.
 
 - **styles.css**: Hoja de estilos que define la apariencia de la extensión. Estiliza el cuerpo, los botones, el campo de entrada y la lista de leads. Incluye comentarios explicativos en el código.
 
-- **script.js**: Archivo JavaScript que contiene toda la lógica de la extensión. Permite guardar leads manualmente, guardar la URL de la pestaña activa (requiere permisos de Chrome), borrar todos los leads y renderizar la lista. Incluye docstrings y comentarios en español para facilitar la comprensión.
+- **script.js**: Archivo JavaScript que contiene toda la lógica de la extensión. Permite guardar leads manualmente, guardar la URL de la pestaña activa (requiere permisos de Chrome), borrar todos los leads y renderizar la lista. Incluye docstrings y comentarios en español para facilitar la comprensión. **Importante:** ahora importa la configuración de Firebase desde un archivo externo `firebaseConfig.js` (ver instrucciones abajo).
+
+- **firebaseConfig.example.js**: Archivo de ejemplo para la configuración de Firebase. Debes copiarlo como `firebaseConfig.js` y colocar tus propias claves de Firebase. **No subas tu archivo real de configuración (`firebaseConfig.js`) al repositorio.**
+
+- **.gitignore**: Incluye la línea `firebaseConfig.js` para evitar que subas tu configuración real a GitHub.
 
 - **manifest.json**: Archivo de configuración requerido por Chrome para definir la extensión. Especifica el nombre, versión, archivos principales, icono y permisos necesarios (por ejemplo, acceso a las pestañas). **Nota:** El formato JSON no permite comentarios, por lo que la explicación de este archivo se encuentra aquí:
 
@@ -18,6 +23,25 @@ Este proyecto es una extensión de Chrome que permite guardar y gestionar leads 
   - `action.default_popup`: Archivo HTML que se muestra como ventana emergente.
   - `action.default_icon`: Icono de la extensión.
   - `permissions`: Permisos requeridos, en este caso acceso a las pestañas (`tabs`).
+
+## Configuración local de Firebase
+
+1. Copia el archivo `firebaseConfig.example.js` y renómbralo como `firebaseConfig.js`.
+2. Completa los valores con tus propias claves de Firebase.
+3. Asegúrate de que `firebaseConfig.js` está en `.gitignore` para no subirlo a GitHub.
+4. El archivo debe tener esta estructura:
+
+   ```js
+   export const firebaseConfig = {
+     apiKey: "TU_API_KEY",
+     authDomain: "TU_AUTH_DOMAIN",
+     projectId: "TU_PROJECT_ID",
+     storageBucket: "TU_STORAGE_BUCKET",
+     messagingSenderId: "TU_MESSAGING_SENDER_ID",
+     appId: "TU_APP_ID",
+     databaseURL: "TU_DATABASE_URL"
+   };
+   ```
 
 ## Funcionamiento general
 

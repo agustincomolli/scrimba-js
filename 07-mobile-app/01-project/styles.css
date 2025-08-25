@@ -3,12 +3,16 @@
   Define la apariencia del cuerpo, los inputs, botones y la lista de leads.
 */
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  min-width: 400px;
+  max-width: 375px;
 }
 
+label {
+  color:#5f9341;
+  font-weight: bold;
+}
 
 /* Campo de entrada para leads */
 input {
